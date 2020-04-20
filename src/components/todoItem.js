@@ -45,7 +45,7 @@ class TodoItem extends LitRender(HTMLElement) {
 
   _onClick(event) {
     const id = this.todo.id;
-    const classList = event.path[0].classList;
+    const classList = (event.path || (event.composedPath && event.composedPath()))[0].classList;
 
     if (classList.contains('toggle')) {
       toggle(id);
