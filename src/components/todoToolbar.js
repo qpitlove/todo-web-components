@@ -23,7 +23,7 @@ class TodoToolbar extends LitRender(HTMLElement) {
     window.addEventListener('hashchange', this._onHashChange);
 
     this._onClick = event => {
-      const target = event.path[0];
+      const target = (event.path || (event.composedPath && event.composedPath()))[0];
       if (target.classList.contains('clear-completed')) {
         clearCompleted();
       }

@@ -20,7 +20,7 @@ class TodoList extends LitRender(HTMLElement) {
     store.subscribe(this._onStateChanged);
 
     this._onClick = event => {
-      const target = event.path[0];
+      const target = (event.path || (event.composedPath && event.composedPath()))[0];
       if (target.classList.contains('toggle-all')) {
         toggleAll(target.checked);
       }
@@ -47,7 +47,6 @@ class TodoList extends LitRender(HTMLElement) {
         : '';
 
     const todoItems = todoList
-      .reverse()
       .filter(todo => {
         return (
           route === '' ||

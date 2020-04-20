@@ -15,7 +15,7 @@ export const route = actionCreator((state, route) => {
 });
 
 export const add = actionCreator((state, todo) => {
-  state.todoList.push({
+  state.todoList.unshift({
     title: todo,
     completed: false,
     id: 'item-xxxxxxxxxxxx'.replace(/[x]/g, function(c) {
