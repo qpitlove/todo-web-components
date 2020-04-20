@@ -24,7 +24,7 @@ module.exports = {
               {
                 useBuiltIns: "usage",
                 corejs: 3,
-                targets: ["last 2 versions", "android >= 4.2"],
+                targets: ["last 2 versions", "android >= 4.4"],
               },
             ],
           ],
